@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://devdiff-client.vercel.app/",
+    origin: "https://devdiff-client.vercel.app",
     methods: ["GET", "POST", "OPTIONS"],
   })
 );
