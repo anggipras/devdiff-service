@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV === "production") {
+  require("module-alias/register");
+}
 import express from "express";
 import dotenv from "dotenv";
 import { connectMongoDB } from "@/config/database";
