@@ -34,3 +34,17 @@ export const uploadImageController = async (
     next(error);
   }
 };
+
+export const getListImagesController = async (
+  _req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const images = await ImageModel.find().sort({ uploadDate: -1 });
+    // images is an array of { filename, url, uploadDate }
+    res.status(200).json({ data: images });
+  } catch (err) {
+    next(err);
+  }
+};
